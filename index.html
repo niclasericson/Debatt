@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn-version</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1008;
+    --paper: #f5f0e8;
+    --accent: #c0392b;
+    --gold: #b8860b;
+    --mid: #5c4a32;
+    --light: #e8e0d0;
+    --green: #2d6a4f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; line-height: 1.75; font-size: 17px; max-width: 680px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  .label { font-size: 11px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--accent); width: fit-content; }
+
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 28px; }
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .hook { font-size: 20px; font-weight: 400; line-height: 1.6; margin-bottom: 28px; border-left: 3px solid var(--gold); padding-left: 18px; color: var(--mid); font-style: italic; }
+
+  p { margin-bottom: 20px; }
+
+  h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin: 36px 0 12px; border-top: 2px solid var(--ink); padding-top: 14px; }
+
+  strong { font-weight: 600; }
+
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border: 1px solid var(--ink); margin: 28px 0; }
+  .col { padding: 16px 18px; border-right: 1px solid var(--light); }
+  .col:last-child { border-right: none; }
+  .col-head { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .col-body { font-size: 14px; color: var(--mid); line-height: 1.5; }
+  .col-risk { font-size: 13px; color: var(--accent); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--light); font-style: italic; }
+
+  .pullquote { font-family: 'Playfair Display', serif; font-size: 21px; font-style: italic; font-weight: 700; color: var(--accent); border-top: 3px double var(--ink); border-bottom: 3px double var(--ink); padding: 18px 0; margin: 32px 0; line-height: 1.35; }
+
+  .ford { background: var(--light); border-left: 4px solid var(--gold); padding: 20px 24px; margin: 28px 0; font-style: italic; color: var(--mid); font-size: 16px; }
+  .ford cite { display: block; font-style: normal; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 10px; color: var(--gold); font-weight: 600; }
+
+  .fase { display: grid; grid-template-columns: 80px 1fr; gap: 0 16px; margin-bottom: 24px; }
+  .fase-year { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); text-align: right; padding-top: 2px; }
+  .fase-text { border-left: 2px solid var(--light); padding-left: 16px; font-size: 15px; color: var(--mid); }
+  .fase-text strong { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
+
+  .cta { background: var(--ink); color: var(--paper); padding: 28px 32px; margin-top: 40px; }
+  .cta p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 12px; }
+  .cta .final { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; font-weight: 700; color: #f0c040; line-height: 1.4; margin: 0; }
+
+  .tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-size: 12px; letter-spacing: 0.1em; color: var(--mid); border: 1px solid var(--light); padding: 4px 10px; }
+
+  .rule { border: none; border-top: 1px solid var(--light); margin: 28px 0; }
+
+  @media (max-width: 500px) {
+    body { padding: 32px 20px 60px; }
+    .three-col { grid-template-columns: 1fr; }
+    .col { border-right: none; border-bottom: 1px solid var(--light); }
+    .col:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<span class="label">Debatt · Ekonomi &amp; Demografi</span>
+
+<h1>Problemet är inte<br>vad vi producerar.<br><em>Det är vem som får del av det.</em></h1>
+
+<p class="hook">Ekonomer säger att AI gör oss rikare och att demografin då spelar mindre roll. De har rätt — om man stannar vid produktionen. Men det är fel ställe att stanna.</p>
+
+<p>Födelsetalen faller i hela den industrialiserade världen. Sverige ligger 31 procent under reproduktionsnivån. Japan, Italien, Sydkorea — samma kurva, olika hastighet. Det är inte en konjunkturell svacka. Det är slutet på en 150-årig strukturell rörelse.</p>
+
+<p>Lägg på att AI och robotik nu tar det kognitiva arbetet på ett sätt som skiljer sig från tidigare teknikskiften. Tidigare omvälvningar ersatte fysiskt arbete med kognitivt — det fanns alltid ett nästa steg upp för den som kunde lära om. Det som är nytt nu är att automatiseringen träffar juridik, redovisning, analys, programmering och administration <em>simultant</em>, inte sekventiellt. Det minskar bredden i de nya arbetsmarknader som brukar uppstå. Huruvida det netto skapar eller förstör jobb är genuint osäkert — men risken för att distributionen av de nya jobben blir smalare än vid tidigare skiften är reell och undervärderad i debatten. Kombinationen skapar en ekvation som kräver att vi håller isär tre saker som annars blandas ihop:</p>
+
+<div class="three-col">
+  <div class="col">
+    <div class="col-head">BNP-produktion</div>
+    <div class="col-body">Vad som faktiskt tillverkas och utförs. AI kan lyfta denna kraftigt.</div>
+    <div class="col-risk">Inte problemet.</div>
+  </div>
+  <div class="col">
+    <div class="col-head">Skattebas</div>
+    <div class="col-body">Den del som finansierar vård, skola och pensioner. Byggd på löneinkomster — som försvinner när algoritmer tar jobben.</div>
+    <div class="col-risk">Krymper redan nu.</div>
+  </div>
+  <div class="col">
+    <div class="col-head">Konsumtions­förmåga</div>
+    <div class="col-body">Köpkraften hos den breda befolkningen. Om AI-vinsterna stannar hos ett fåtal kollapsar efterfrågan — trots hög produktion.</div>
+    <div class="col-risk">Det verkliga hotet.</div>
+  </div>
+</div>
+
+<p>Det är den tredje kolumnen som är artikelns kärna. En ekonomi kan producera enorma överskott och ändå stagnera om köpkraften inte når ut. Det är inte ett nytt problem.</p>
+
+<div class="ford">
+  "Det spelar ingen roll hur effektivt vi producerar bilar om våra egna arbetare inte har råd att köpa dem."
+  <cite>— Henry Ford, 1914</cite>
+</div>
+
+<p>Ford löste det på fabriksnivå. John Maynard Keynes formulerade det som ekonomisk teori under 30-talsdepressionen: marknaden rättar inte sig själv tillräckligt snabbt när efterfrågan kollapsar. Staten måste hålla konsumtionen uppe när privat sektor inte distribuerar köpkraften tillräckligt brett. Det är logiken bakom det svenska folkhemmet — och det är exakt samma logik som behövs nu, fast i ett nytt teknologiskt sammanhang.</p>
+
+<div class="pullquote">"Problemet är aldrig produktionen. Det är alltid distributionen."</div>
+
+<h2>Vi har sett det här filmen förut</h2>
+
+<p>Under industrialiseringen förlorade barn sin ekonomiska funktion. I bondesamhället var de produktionsmedel och ålderdomsförsäkring. Industrin tog bort båda rollerna. Födelsetalen kollapsade som ett direkt svar — från över fem barn per kvinna till under två på sextio år.</p>
+
+<p>Idag håller samma mekanism på att drabba <strong>vuxna människor i stort</strong>. AI tar det kognitiva arbetet. Människan riskerar att förlora sin ekonomiska funktion på samhällsnivå på samma sätt som barnet förlorade sin på hushållsnivå.</p>
+
+<p>Men historien erbjuder ett motexempel — med en viktig reservation. Babyboomen på 1940–60-talet sammanföll med full sysselsättning, expanderande välfärdsstat och förutsägbar framtid. Det är frestande att dra slutsatsen att ekonomisk trygghet direkt driver fertilitet. Verkligheten är mer sammansatt. Urbanisering, kvinnors ökade utbildning, senarelagd familjebildning och djupare värderingsförändringar kring individuell autonomi är alla självständiga faktorer — och de flesta pekar strukturellt nedåt oavsett ekonomisk trygghet. Det ekonomiska argumentet är ändå relevant: inte som ensam förklaring, utan som den faktor som faktiskt <em>kan</em> påverkas av politik. Värderingsförändringen kan vi inte lagstifta bort. Men vi kan se till att de som vill bilda familj inte hindras av ekonomisk osäkerhet och en arbetsmarknad som straffar föräldraledighet.</p>
+
+<div class="fase">
+  <div class="fase-year">1870<br>–35</div>
+  <div class="fase-text"><strong>Fas 1 · Barn förlorar sin ekonomiska roll</strong>TFR faller från 5,1 till 1,7. Industrialiseringen tar barnets funktion som produktionsmedel och ålderdomsförsäkring.</div>
+</div>
+<div class="fase">
+  <div class="fase-year">1935<br>–70</div>
+  <div class="fase-text"><strong>Fas 2 · Trygghet sammanfaller med babyboom</strong>TFR stiger till 2,6. Flera faktorer — men ett socialt kontrakt som folk litade på var en av dem.</div>
+</div>
+<div class="fase">
+  <div class="fase-year">1970<br>–nu</div>
+  <div class="fase-text"><strong>Fas 3 · Tjänstesamhällets erosion</strong>TFR faller igen. Sverige 1,45. Sydkorea 0,72. Trenden är nedåt — men inte ofrånkomlig.</div>
+</div>
+
+<h2>Vad som krävs — och varför det är svårt</h2>
+
+<p>Det finns tre policyinstrument som pekar i rätt riktning. Ingen av dem är enkel, och en kritisk läsare gör rätt i att pressa på motargumenten.</p>
+
+<p><strong>Automationsskatt</strong> — när en algoritm ersätter tio löner försvinner tio skattebaser. En automationsskatt är inte en straffskatt på innovation, det är en återställning av en skattebas som redan existerade. Motargumentet är reellt: ensidigt genomförd driver den investeringar till lågskattejurisdiktioner. Det kräver EU-koordinering — vilket tar tid och sällan blir vattentätt.</p>
+
+<p><strong>Medborgarlön</strong> — löser konsumtionssidan och ger den åldrande befolkningen köpkraft. Men det löser inte omsorgssidan. En 85-åring kan inte köpa sig ur behovet av en människa som håller i handen. Och pilotprojekt ger ännu blandade signaler.</p>
+
+<p><strong>Statligt delägarskap i AI-infrastruktur</strong> — Norges oljefond som modell. Gå in som ägare tidigt i en resurstillgång vars avkastning finansierar välfärden. Motargumentet: statlig kapitalallokering har historiskt svårt att identifiera rätt tillgångar i rätt tid.</p>
+
+<p>Alla tre pekar rätt. Ingen är tillräcklig ensam. Det avgörande hindret är inte tekniskt eller ekonomiskt — det är koordinering. Kapital flyr nationsgränser. Valcyklar är fyra år. De demografiska konsekvenserna slår fullt ut om en till två generationer. Ingen politiker har incitament att ta smällen nu för en vinst de inte sitter kvar för att ta åt sig.</p>
+
+<hr class="rule">
+
+<div class="cta">
+  <p>Saltsjöbadsavtalet uppstod inte ur välvilja. Det uppstod ur konflikttrötthet — när kostnaden för att inte koordinera blev tillräckligt synlig för tillräckligt många. Det är ett möjligt scenario igen. Men det finns ett bättre.</p>
+  <p class="final">Den verkliga frågan är inte vem som betalar räkningen. Det är vad människor ska göra när räkningen inte längre kräver dem.</p>
+</div>
+
+<div class="tags">
+  <span class="tag">#Demografi</span>
+  <span class="tag">#AI</span>
+  <span class="tag">#Välfärd</span>
+  <span class="tag">#Ekonomi</span>
+  <span class="tag">#Framtid</span>
+  <span class="tag">#Keynes</span>
+  <span class="tag">#SvenskModell</span>
+</div>
+
+</body>
+</html>
